@@ -8,5 +8,5 @@ gnd---------gnd
 ESP32------------------上位机
 波特率115200
 
-![Uploading ac2d520c4e51754ea92dd33d7acbb29.jpg…]()
+![Uploading ac2d520c4e51754ea92dd33d7acbb29.jpg…](README.assets/接线图.jpg)
 
