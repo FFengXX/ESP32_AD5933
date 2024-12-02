@@ -56,13 +56,10 @@ void loop(void)
   frequencySweepEasy();
 
   // Delay
-  delay(5000);
+  delay(1000);
 
   // Complex but more robust method for frequency sweep
-  frequencySweepRaw();
-
-  // Delay
-  delay(5000);
+  //frequencySweepRaw();
 }
 
 // Easy way to do a frequency sweep. Does an entire frequency sweep at once and
@@ -78,7 +75,10 @@ void frequencySweepEasy() {
       int cfreq = START_FREQ/1000;
       for (int i = 0; i < NUM_INCR+1; i++, cfreq += FREQ_INCR/1000) {
         // Print raw frequency data
+        Serial.print("freq: ");
         Serial.print(cfreq);
+        Serial.print("K");
+        Serial.print("\n");
         Serial.print(": R=");
         Serial.print(real[i]);
         Serial.print("/I=");
