@@ -49,12 +49,15 @@ void setup(void)
   else
     Serial.println("Calibration failed...");
 }
-
+int cnt =0;
 void loop(void)
 {
   // Easy to use method for frequency sweep
   frequencySweepEasy();
+  cnt++;
 
+  Serial.println("Cnt = ");
+  Serial.println(cnt);
   // Delay
   delay(1000);
 
