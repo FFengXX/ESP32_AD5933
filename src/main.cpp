@@ -88,7 +88,6 @@ void frequencySweepEasy() {
         // Compute impedance
         double magnitude = sqrt(pow(real[i], 2) + pow(imag[i], 2));
         double impedance = 1/(magnitude*gain[i]);
-        Serial.print("  |Z|=");
         Serial.print(";");
         Serial.println(impedance);
       }
