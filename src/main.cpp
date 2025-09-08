@@ -59,7 +59,7 @@ void loop(void)
   Serial.println("Cnt = ");
   Serial.println(cnt);
   // Delay
-  delay(1000);
+  //delay(1000);
 
   // Complex but more robust method for frequency sweep
   //frequencySweepRaw();
@@ -78,22 +78,21 @@ void frequencySweepEasy() {
       int cfreq = START_FREQ/1000;
       for (int i = 0; i < NUM_INCR+1; i++, cfreq += FREQ_INCR/1000) {
         // Print raw frequency data
-        Serial.print("freq: ");
+        //Serial.print("freq: ");
         Serial.print(cfreq);
-        Serial.print("K");
-        Serial.print("\n");
-        Serial.print(": R=");
+        Serial.print(";");
         Serial.print(real[i]);
-        Serial.print("/I=");
+        Serial.print(";");
         Serial.print(imag[i]);
 
         // Compute impedance
         double magnitude = sqrt(pow(real[i], 2) + pow(imag[i], 2));
         double impedance = 1/(magnitude*gain[i]);
         Serial.print("  |Z|=");
+        Serial.print(";");
         Serial.println(impedance);
       }
-      Serial.println("Frequency sweep complete!");
+      Serial.println("complete!");//这个平台的发送缓冲区大小有点问题不好改，所以压缩一下数据量
     } else {
       Serial.println("Frequency sweep failed...");
     }
